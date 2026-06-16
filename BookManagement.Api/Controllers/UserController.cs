@@ -41,5 +41,14 @@ namespace BookManagemant.Controllers
             var response = await _mediator.Send(new GetAllUser.GetAllUserQuery(), ct);
             return Ok(response);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateName([FromRoute] Guid id, [FromBody] UpdateName.UpdateNameRequest request,
+            CancellationToken ct)
+        {
+            var command = new UpdateName.UpdateNameCommand(id, request.NewName);
+            await _mediator.Send(command, ct);
+            return NoContent();
+        }
     }
 }

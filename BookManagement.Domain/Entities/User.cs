@@ -13,4 +13,14 @@ public class User
         Email = email;
         PasswordHash = passwordHash;
     }
+
+    public void UpdateName(string name)
+    {
+        Name = name;
+    }
+
+    public void UpdateEmail(string email)
+    {
+        Email = email;
+    }
 }
