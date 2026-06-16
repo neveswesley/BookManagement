@@ -28,10 +28,17 @@ namespace BookManagemant.Controllers
             return Created();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetUserById([FromQuery] Guid id, CancellationToken ct)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById([FromRoute] Guid id, CancellationToken ct)
         {
             var response = await _mediator.Send(new GetUserById.GetUserByIdQuery(id), ct);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers(CancellationToken ct)
+        {
+            var response = await _mediator.Send(new GetAllUser.GetAllUserQuery(), ct);
             return Ok(response);
         }
     }
