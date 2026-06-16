@@ -1,0 +1,47 @@
+﻿using BookManagement.Application.Exceptions;
+
+namespace BookManagemant.Middlewares;
+
+public class ExceptionMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public ExceptionMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        try
+        {
+            await _next(context);
+        }
+        catch (ErrorOnValidationException ex)
+        {
+            context.Response.StatusCode = StatusCodes.Status400BadRequest;
+            context.Response.ContentType = "application/json";
+
+            await context.Response.WriteAsJsonAsync(new
+            {
+                message = ex.ErrorMessages
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[EXCEPTION] {ex.GetType().Name}: {ex.Message}");
+            Console.WriteLine($"[INNER] {ex.InnerException?.Message}");
+            Console.WriteLine($"[INNER INNER] {ex.InnerException?.InnerException?.Message}");
+            Console.WriteLine(ex.StackTrace);
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            await context.Response.WriteAsJsonAsync(new
+            {
+                message = ex.Message,
+                exception = ex.GetType().Name,
+                innerException = ex.InnerException?.Message,
+                innerInnerException = ex.InnerException?.InnerException?.Message,
+                stackTrace = ex.StackTrace
+            });
+        }
+    }
+}

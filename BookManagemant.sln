@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.Api", "BookManagement.Api\BookManagement.Api.csproj", "{8BA7ED3D-4670-4571-883B-F6952F3BCDFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.Application", "BookManagement.Application\BookManagement.Application.csproj", "{4819AAD0-7A73-4EF7-B531-662E1A9EB533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.Domain", "BookManagement.Domain\BookManagement.Domain.csproj", "{6ECE9332-7378-4BCA-9C53-83BFBCFE4DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.Infrastructure", "BookManagement.Infrastructure\BookManagement.Infrastructure.csproj", "{3A2B933C-6B16-4733-B266-88A2CC78CA1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BA7ED3D-4670-4571-883B-F6952F3BCDFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA7ED3D-4670-4571-883B-F6952F3BCDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA7ED3D-4670-4571-883B-F6952F3BCDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA7ED3D-4670-4571-883B-F6952F3BCDFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4819AAD0-7A73-4EF7-B531-662E1A9EB533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4819AAD0-7A73-4EF7-B531-662E1A9EB533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4819AAD0-7A73-4EF7-B531-662E1A9EB533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4819AAD0-7A73-4EF7-B531-662E1A9EB533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ECE9332-7378-4BCA-9C53-83BFBCFE4DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ECE9332-7378-4BCA-9C53-83BFBCFE4DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ECE9332-7378-4BCA-9C53-83BFBCFE4DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ECE9332-7378-4BCA-9C53-83BFBCFE4DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A2B933C-6B16-4733-B266-88A2CC78CA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2B933C-6B16-4733-B266-88A2CC78CA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2B933C-6B16-4733-B266-88A2CC78CA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2B933C-6B16-4733-B266-88A2CC78CA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
