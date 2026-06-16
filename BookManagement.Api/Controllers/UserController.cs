@@ -42,11 +42,20 @@ namespace BookManagemant.Controllers
             return Ok(response);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("Update-Name/{id}")]
         public async Task<IActionResult> UpdateName([FromRoute] Guid id, [FromBody] UpdateName.UpdateNameRequest request,
             CancellationToken ct)
         {
             var command = new UpdateName.UpdateNameCommand(id, request.NewName);
+            await _mediator.Send(command, ct);
+            return NoContent();
+        }
+        
+        [HttpPut("Update-Email/{id}")]
+        public async Task<IActionResult> UpdateEmail([FromRoute] Guid id, [FromBody] UpdateEmail.UpdateEmailRequest request,
+            CancellationToken ct)
+        {
+            var command = new UpdateEmail.UpdateEmailCommand(id, request.NewEmail);
             await _mediator.Send(command, ct);
             return NoContent();
         }
